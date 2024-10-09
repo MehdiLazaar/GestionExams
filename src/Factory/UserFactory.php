@@ -36,6 +36,8 @@ final class UserFactory extends PersistentProxyObjectFactory
             'roles' => ['ROLE_ADMIN'],
             'password' => '$2y$13$w7usfxhm1MP8qjT8TDNzOq.UuWfuzSzfwqX/agMwG8JeqWgacZ.',
             'username' => 'Admin',
+            'locale' => 'fr',
+            'is_verified' => 1
         ];
     }
 

@@ -51,6 +51,25 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::linkToCrud('Filiere', 'fas fa-list', Filiere::class);
+        yield MenuItem::linkToCrud('Semestre', 'fas fa-list', Semestre::class);
+        yield MenuItem::linkToCrud('Enseignant', 'fas fa-list', Enseignant::class);
+
+        yield MenuItem::linkToCrud('Module', 'fas fa-list', Module::class);
+        yield MenuItem::linkToCrud('Étudiant', 'fas fa-list', Etudiant::class);
+        yield MenuItem::linkToCrud('Note', 'fas fa-list', Note::class);
+        yield MenuItem::linkToCrud('User', 'fas fa-list', User::class);
+    }
+    public function configureUserMenu(UserInterface $user): UserMenu
+    {
+        return parent::configureUserMenu($user)
+        ->setName($user->getUserIdentifier())
+            ->setGravatarEmail($user->getEmail())
+            ->displayUserAvatar(true);
+    }
+
+    public function configureAssets(): Assets
+    {
+        return Assets::new()->addCssFile('build/css/admin.css');
     }
 }

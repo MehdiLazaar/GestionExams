@@ -58,36 +58,36 @@ class Module
         return $this;
     }
 
-    public function getEnseignant(): ?enseignant
+    public function getEnseignant(): ?Enseignant
     {
         return $this->enseignant;
     }
 
-    public function setEnseignant(?enseignant $enseignant): static
+    public function setEnseignant(?Enseignant $enseignant): static
     {
         $this->enseignant = $enseignant;
 
         return $this;
     }
 
-    public function getFiliere(): ?filiere
+    public function getFiliere(): ?Filiere
     {
         return $this->filiere;
     }
 
-    public function setFiliere(?filiere $filiere): static
+    public function setFiliere(?Filiere $filiere): static
     {
         $this->filiere = $filiere;
 
         return $this;
     }
 
-    public function getSemestre(): ?semestre
+    public function getSemestre(): ?Semestre
     {
         return $this->semestre;
     }
 
-    public function setSemestre(?semestre $semestre): static
+    public function setSemestre(?Semestre $semestre): static
     {
         $this->semestre = $semestre;
 

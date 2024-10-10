@@ -21,11 +21,11 @@ class Note
 
     #[ORM\ManyToOne(inversedBy: 'notes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?etudiant $etudiant = null;
+    private ?Etudiant $etudiant = null;
 
     #[ORM\ManyToOne(inversedBy: 'notes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?module $module = null;
+    private ?Module $module = null;
 
     public function getId(): ?int
     {
@@ -56,24 +56,24 @@ class Note
         return $this;
     }
 
-    public function getEtudiant(): ?etudiant
+    public function getEtudiant(): ?Etudiant
     {
         return $this->etudiant;
     }
 
-    public function setEtudiant(?etudiant $etudiant): static
+    public function setEtudiant(?Etudiant $etudiant): static
     {
         $this->etudiant = $etudiant;
 
         return $this;
     }
 
-    public function getModule(): ?module
+    public function getModule(): ?Module
     {
         return $this->module;
     }
 
-    public function setModule(?module $module): static
+    public function setModule(?Module $module): static
     {
         $this->module = $module;
 

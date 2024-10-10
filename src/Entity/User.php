@@ -40,7 +40,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $locale = null;
 
     #[ORM\Column]
-    private ?bool $is_verified = null;
+    protected ?bool $is_verified = null;
 
     public function getId(): ?int
     {
@@ -147,6 +147,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     public function setVerified(bool $is_verified): static
+    {
+        $this->is_verified = $is_verified;
+
+        return $this;
+    }
+    public function setIsVerified(bool $is_verified): static
     {
         $this->is_verified = $is_verified;
 

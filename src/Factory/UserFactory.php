@@ -32,7 +32,7 @@ final class UserFactory extends PersistentProxyObjectFactory
     protected function defaults(): array|callable
     {
         return [
-            'email' => 'admin@univ.fr',
+            'email' => self::faker()->unique()->email(),
             'roles' => ['ROLE_ADMIN'],
             'password' => '$2y$13$w7usfxhm1MP8qjT8TDNzOq.UuWfuzSzfwqX/agMwG8JeqWgacZ.',
             'username' => 'Admin',
